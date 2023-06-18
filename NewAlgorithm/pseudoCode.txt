@@ -1,0 +1,15 @@
+# pseudocode for similar algorithm 
+sameComm = []
+diffComm = []
+
+for v in Graph:
+    sameComm.append(v)
+    for neighbor in Graph[v]:
+        lst = findCommonNodes(v, neighbor, Graph)
+        isDifferentComm = False
+        for u in lst:
+            if u not in Graph[v]:
+                isDifferentComm = True
+                diffComm.append(neighbor)
+        if isDifferentComm == False:
+            sameComm.append(neighbor)
